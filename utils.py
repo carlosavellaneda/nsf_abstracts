@@ -50,3 +50,13 @@ def load_data(file_path: str) -> Tuple[np.array]:
     files = data["file_names"]
     embeddings = data["embeddings"]
     return files, embeddings
+
+
+def get_stopwords() -> list:
+    """
+    Load a list of stopwords
+    """
+    with open("stopwords.txt", "r") as f:
+        stopwords = f.readlines()
+    stopwords = [word.strip() for word in stopwords]
+    return stopwords
